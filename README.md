@@ -14,6 +14,10 @@
 |1157. 단어 공부|[링크](./%EB%B0%B1%EC%A4%80/Bronze/1157.%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EA%B3%B5%EB%B6%80/%EB%8B%A8%EC%96%B4%E2%80%85%EA%B3%B5%EB%B6%80.java)|
 |1919. 애너그램 만들기|[링크](./%EB%B0%B1%EC%A4%80/Bronze/1919.%E2%80%85%EC%95%A0%EB%84%88%EA%B7%B8%EB%9E%A8%E2%80%85%EB%A7%8C%EB%93%A4%EA%B8%B0/README.md)|
 |25314. 코딩은 체육과목 입니다|[링크](./%EB%B0%B1%EC%A4%80/Bronze/25314.%E2%80%85%EC%BD%94%EB%94%A9%EC%9D%80%E2%80%85%EC%B2%B4%EC%9C%A1%EA%B3%BC%EB%AA%A9%E2%80%85%EC%9E%85%EB%8B%88%EB%8B%A4/%EC%BD%94%EB%94%A9%EC%9D%80%E2%80%85%EC%B2%B4%EC%9C%A1%EA%B3%BC%EB%AA%A9%E2%80%85%EC%9E%85%EB%8B%88%EB%8B%A4.java)|
+### 🚀 Gold
+| 문제번호 | 링크 |
+| ----- | ----- |
+|1806. 부분합|[링크](./%EB%B0%B1%EC%A4%80/Gold/1806.%E2%80%85%EB%B6%80%EB%B6%84%ED%95%A9/README.md)|
 ### 🚀 Silver
 | 문제번호 | 링크 |
 | ----- | ----- |
