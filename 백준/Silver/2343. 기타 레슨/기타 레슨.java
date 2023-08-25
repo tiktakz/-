@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,35 +13,35 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
         int[] arr = new int[n];
         st = new StringTokenizer(br.readLine());
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        // 최소 담아야할 시간은 9분짜리(제일 긴 시간이 9분이니까..)
+        // 최대 담을 수 있는 시간은 45분(레슨 시간의 총합)
         int start = Arrays.stream(arr).max().getAsInt();
         int end = Arrays.stream(arr).sum();
-        int answer = 0;
 
         while (start <= end) {
+            int sum = 0;
+            int dvd = 0;
             int mid = (start + end) / 2;
-            if (count(arr, mid) <= m) {
-                answer = mid;
+            for (int i=0; i<n; i++) {
+                if (sum + arr[i] > mid) {
+                    sum = 0;
+                    dvd++;
+                }
+                sum += arr[i];
+            }
+            if (sum != 0) dvd++;
+            if (dvd > m) {
+                start = mid + 1;
+            }
+            else {
                 end = mid - 1;
             }
-            else start = mid + 1;
         }
-        System.out.println(answer);
-    }
+        System.out.println(start);
 
-    private static int count(int[] arr, int capacity) {
-        int sum = 0;
-        int blueray = 1;
-        for (int i : arr) {
-            if (sum + i > capacity) {
-                blueray++;
-                sum = i;
-            }
-            else sum += i;
-        }
-        return blueray;
     }
 }
