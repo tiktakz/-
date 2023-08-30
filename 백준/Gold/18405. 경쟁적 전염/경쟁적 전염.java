@@ -6,6 +6,15 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
+    /*
+     * 설명
+     * 처음에 우선순위 큐 정렬을 오직 바이러스 번호로 했음
+     * 그렇기 때문에 BFS에서도 계속 우선순위 큐에 다음 노드를 넣기 때문에 무조건 번호가 낮은 바이러스를 뽑음.
+     * 즉 1초 후에는 (예시입력 1 기준) 1, 2, 3번 바이러스가 각각 퍼져야하는데
+     * 정렬 방식 때문에 다음에도 1번 바이러스가 있는 노드 기준으로 탐색을 함.
+     * 즉 시간이 같다면(모든 노드 다 움직임) 그때 이제 다시 낮은 번호부터 움직여야하고
+     * 시간이 다르다면 시간이 낮은 노드(즉 움직이지 못함)을 먼저 움직여 줘야한다.
+     */
 
 class Node implements Comparable<Node> {
     int x, y, index, time;
