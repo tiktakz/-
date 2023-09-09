@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    static int n, m;
+    static int[] answer;
+    static boolean[] visited;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        m = sc.nextInt();
+        visited = new boolean[n];
+        answer = new int[m];
+        DFS(0);
+    }
+
+    public static void DFS(int depth) {
+        if (depth == m) {
+            for (int i : answer) System.out.print(i + " ");
+            System.out.println();
+            return;
+        }
+
+        // n 만큼 경우의 수를 체크
+        for (int i=0; i<n; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                answer[depth] = i+1;
+                DFS(depth+1);
+                visited[i] = false;
+            }
+        }
+    }
+}
