@@ -1,32 +1,50 @@
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     static int n, m;
+    static int[] arr;
     static int[] answer;
-    static boolean[] visited;
+    static boolean[] check;
+    static StringBuilder sb = new StringBuilder();
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         m = sc.nextInt();
-        visited = new boolean[n];
+
+        arr = new int[n];
+
+        for (int i=0; i<n; i++) {
+            arr[i] = i+1;
+        }
+
+        check = new boolean[n];
         answer = new int[m];
-        DFS(0,0);
+
+        Arrays.sort(arr);
+
+        dfs(0, 0);
+        System.out.println(sb);
+        sc.close();
     }
 
-    public static void DFS(int start, int depth) {
+    public static void dfs(int depth, int start) {
         if (depth == m) {
-            for (int i : answer) System.out.print(i + " ");
-            System.out.println();
+            for (int i : answer) {
+                sb.append(i).append(" ");
+            }
+            sb.append("\n");
             return;
         }
 
-        // n 만큼 경우의 수를 체크
         for (int i=start; i<n; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                answer[depth] = i+1;
-                DFS(i + 1, depth + 1);
-                visited[i] = false;
+            if (!check[i]) {
+                check[i] = true;
+                answer[depth] = arr[i];
+                dfs(depth + 1, i + 1);
+                check[i] = false;
             }
         }
     }
